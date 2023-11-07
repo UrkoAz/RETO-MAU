@@ -35,6 +35,26 @@ class MySQLPDO {
         $result = $stmt->fetchAll();
         return $result; //devuelve el conjunto de datos de la consulta
     }
+    public static function insertCorredor($objetoCorredor){
+        $sql = "INSERT INTO corredor (nombre, apellido, contrasena, huella) VALUES (?, ?, ?, ?)";
+        $params = array(
+            $objetoCorredor->getNombre(),
+            $objetoCorredor->getApellido(),
+            $objetoCorredor->getContrasena(),
+            $objetoCorredor->getHuella()
+        );
+        $result = MySQLPDO::exec($sql, $params);
+        return $result;
+    }
 
+    public static function insertEquipo($objetoEquipo){
+        $sql = "INSERT INTO equipo (id, nombre) VALUES (?, ?)";
+        $params = array(
+            $objetoEquipo->getId(),
+            $objetoEquipo->getNombre()
+        );
+        $result = MySQLPDO::exec($sql, $params);
+        return $result;
+    }
 }
 ?>

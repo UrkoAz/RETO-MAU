@@ -3,8 +3,7 @@
 <title>Alta de corredor</title>
 <head>
     <link rel="icon" href="../img/maulogo.jpg" type="image/icon type">
-    <link rel="stylesheet" type="text/css" href="css/estilos2.css">
-    <link rel="stylesheet" type="text/css" href="css/estilotabla.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
 <body>
     <form method="post" action="alta_corredor.php">
