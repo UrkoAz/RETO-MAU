@@ -5,7 +5,7 @@ class MySQLPDO {
     private static $username = "user_mau";
     private static $password = "pass_mau";
     private static $base;
-    
+
     public static function connect() {
         if (MySQLPDO::$base != null) {
             MySQLPDO::$base = null;
@@ -36,7 +36,7 @@ class MySQLPDO {
         return $result; //devuelve el conjunto de datos de la consulta
     }
     public static function insertCorredor($objetoCorredor){
-        $sql = "INSERT INTO corredor (nombre, apellido, contrasena, huella) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO corredor (NOMBRE, APELLIDO, CONTRASENA, HUELLA) VALUES (?, ?, ?, ?)";
         $params = array(
             $objetoCorredor->getNombre(),
             $objetoCorredor->getApellido(),
@@ -48,7 +48,7 @@ class MySQLPDO {
     }
 
     public static function insertEquipo($objetoEquipo){
-        $sql = "INSERT INTO equipo (id, nombre) VALUES (?, ?)";
+        $sql = "INSERT INTO equipo (ID, NOMBRE) VALUES (?, ?)";
         $params = array(
             $objetoEquipo->getId(),
             $objetoEquipo->getNombre()

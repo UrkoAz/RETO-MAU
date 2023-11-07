@@ -20,7 +20,7 @@
         $result = MySQLPDO::insertEquipo($objetoEquipo);
 
         if ($result != 0) {
-            echo 'Equipo introducida correctamente';
+            echo 'Equipo introducido correctamente';
         } else {
             echo 'ERROR: No se ha podido introducir el Equipo';
         }
