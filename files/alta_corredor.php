@@ -11,6 +11,7 @@
             $varApellido = $_POST['apellido'];
             $varContrasena = $_POST['contrasena'];
             $varHuella = $_POST['huella'];
+            $varEquipoId = $_POST['fk_equipo_id'];
 
         //nuevo objeto corredor
         $objetoCorredor = new Corredor();
@@ -19,6 +20,7 @@
         $objetoCorredor->setApellido($varApellido);
         $objetoCorredor->setHuella($varHuella);
         $objetoCorredor->setContrasena($varContrasena);
+        $objetoCorredor->setEquipo_id($varEquipoId);
 
         MySQLPDO::connect();
         $result = MySQLPDO::insertCorredor($objetoCorredor);

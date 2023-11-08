@@ -5,6 +5,7 @@
         private $apellido;
         private $contrasena;
         private $huella;
+        private $equipo_id;
         
 
         /**
@@ -103,6 +104,26 @@
         public function setHuella($huella)
         {
                 $this->huella = $huella;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of equipo_id
+         */ 
+        public function getEquipo_id()
+        {
+                return $this->equipo_id;
+        }
+
+        /**
+         * Set the value of equipo_id
+         *
+         * @return  self
+         */ 
+        public function setEquipo_id($equipo_id)
+        {
+                $this->equipo_id = $equipo_id;
 
                 return $this;
         }

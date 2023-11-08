@@ -35,18 +35,20 @@ class MySQLPDO {
         $result = $stmt->fetchAll();
         return $result; //devuelve el conjunto de datos de la consulta
     }
+    //INSERTAR UN CORREDOR
     public static function insertCorredor($objetoCorredor){
-        $sql = "INSERT INTO corredor (NOMBRE_C, APELLIDO, CONTRASENA, HUELLA) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO corredor (NOMBRE_C, APELLIDO, CONTRASENA, HUELLA, EQUIPO_ID) VALUES (?, ?, ?, ?, ?)";
         $params = array(
             $objetoCorredor->getNombre(),
             $objetoCorredor->getApellido(),
             $objetoCorredor->getContrasena(),
-            $objetoCorredor->getHuella()
+            $objetoCorredor->getHuella(),
+            $objetoCorredor->getEquipo_id()
         );
         $result = MySQLPDO::exec($sql, $params);
         return $result;
     }
-
+    //INSERTAR UN EQUIPO
     public static function insertEquipo($objetoEquipo){
         $sql = "INSERT INTO equipo (ID_E, NOMBRE_E) VALUES (?, ?)";
         $params = array(
@@ -56,8 +58,16 @@ class MySQLPDO {
         $result = MySQLPDO::exec($sql, $params);
         return $result;
     }
+    //BUSCAR UN EQUIPO CONECTADO CON EL FORMULARIO DE CORREDOR PARA QUE SALGAN LOS EQUIPOS EN EL DESPLEGABLE.
     public static function buscarEquipos(){
         $sql = "SELECT * FROM equipo";
+        $params = array();
+        $result = MySQLPDO::select($sql, $params);
+        return $result;
+    }
+    //BUSCAR CORREDOR
+    public static function buscarCorredor($buscar){
+        $sql = "SELECT * FROM corredor";
         $params = array();
         $result = MySQLPDO::select($sql, $params);
         return $result;
