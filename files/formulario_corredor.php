@@ -6,11 +6,30 @@
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
 <body>
+    <?php
+        include_once '../persistence/MySQLPDO.class.php';
+        include_once '../entity/Equipo.class.php';
+        MySQLPDO::connect();
+        $result = MySQLPDO::buscarEquipos();
+        
+    ?>
     <form method="post" action="alta_corredor.php">
         Nombre: <input type="text" name="nombre" maxlength="255" required="required"></br>
         Apellido: <input type="text" name="apellido" maxlength="255" required="required"></br>
         Contrase&ntilde;a: <input type="text" name="contrasena" maxlength="255" required="required"></br>
         Huella: <input type="text" name="huella" maxlength="255" required="required"></br>
+        Equipo: <select name="opcion">
+                    <?php
+                    /*bucle para que salgan tantas opciones como equipos hay en la BBDD*/
+                    foreach ($result as $fila){
+                        extract ($fila);
+                    ?>
+                    <option value="<?php echo $ID_E ?>" ><?php echo $NOMBRE_E ?></option> <!-- en el value ponemos la ID y queremos que en la opción salga el nombre del equipo-->
+                    <?php
+                    }
+                    ?>
+                </select>
+        <tr>
         <input type="submit" name="btn_alta" value="Alta">
     </form>
 </body>

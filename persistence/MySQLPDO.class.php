@@ -36,7 +36,7 @@ class MySQLPDO {
         return $result; //devuelve el conjunto de datos de la consulta
     }
     public static function insertCorredor($objetoCorredor){
-        $sql = "INSERT INTO corredor (NOMBRE, APELLIDO, CONTRASENA, HUELLA) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO corredor (NOMBRE_C, APELLIDO, CONTRASENA, HUELLA) VALUES (?, ?, ?, ?)";
         $params = array(
             $objetoCorredor->getNombre(),
             $objetoCorredor->getApellido(),
@@ -48,12 +48,18 @@ class MySQLPDO {
     }
 
     public static function insertEquipo($objetoEquipo){
-        $sql = "INSERT INTO equipo (ID, NOMBRE) VALUES (?, ?)";
+        $sql = "INSERT INTO equipo (ID_E, NOMBRE_E) VALUES (?, ?)";
         $params = array(
             $objetoEquipo->getId(),
             $objetoEquipo->getNombre()
         );
         $result = MySQLPDO::exec($sql, $params);
+        return $result;
+    }
+    public static function buscarEquipos(){
+        $sql = "SELECT * FROM equipo";
+        $params = array();
+        $result = MySQLPDO::select($sql, $params);
         return $result;
     }
 }
