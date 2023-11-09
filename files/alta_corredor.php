@@ -26,7 +26,7 @@
         $result = MySQLPDO::insertCorredor($objetoCorredor);
 
         if ($result != 0) {
-            echo 'Corredor introducida correctamente';
+            echo 'Corredor introducido correctamente';
         } else {
             echo 'ERROR: No se ha podido introducir el corredor';
         }

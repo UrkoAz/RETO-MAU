@@ -16,7 +16,7 @@
     <form method="post" action="alta_corredor.php">
         Nombre: <input type="text" name="nombre" maxlength="255" required="required"></br>
         Apellido: <input type="text" name="apellido" maxlength="255" required="required"></br>
-        Contrase&ntilde;a: <input type="text" name="contrasena" maxlength="255" required="required"></br>
+        Contrase&ntilde;a: <input type="password" name="contrasena" maxlength="255" required="required"></br>
         Huella: <input type="text" name="huella" maxlength="255" required="required"></br>
         Equipo: <select name="fk_equipo_id">
                     <?php
