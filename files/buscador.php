@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<head></head>
+<head>
+    <link rel="stylesheet" href="../CSS/estilos.css">
+</head>
 <body>
     <form method="POST" action="<?php echo $_SERVER ['PHP_SELF']; ?>">
         Corredor:<input type="text" name="buscarCor"/>
@@ -38,8 +40,8 @@
             <td><?php echo $HUELLA; ?></td>
             <td><?php echo $EQUIPO_ID; ?></td>
             <td>
-                <form method="POST" action="producto_borrado.php">
-                    <input type="hidden" name="id" value="<?php echo $ID; ?>" />
+                <form method="POST" action="corredor_borrado.php">
+                    <input type="hidden" name="id" value="<?php echo $ID_C; ?>" />
                     <input type="submit" name="btn_borrar" value="Borrar" />
                 </form>
             </td>

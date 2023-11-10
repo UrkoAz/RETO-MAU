@@ -16,7 +16,7 @@ include_once '../entity/Corredor.class.php';
 </head>
 <body>
     <form method="post" action="corredor_modificado.php">
-        <input type="hidden" name="id" value="<?php echo $ID_C; ?>"/>
+        <input type="hidden" name="id" value="<?php echo $id; ?>"/>
         Nombre: <input type="text" name="nombre" 
         maxlength="255" value="<?php echo $objetoCorredor->getNombre();?>" required="required"/></br>
         Apellido: <input type="text" name="apellido" 
@@ -25,7 +25,7 @@ include_once '../entity/Corredor.class.php';
         maxlength="255" value="<?php echo $objetoCorredor->getContrasena();?>" required="required"/></br>
         Huella: <input type="text" name="huella" 
         maxlength="255" value="<?php echo $objetoCorredor->getHuella();?>" required="required"/></br>
-        N&uacute;mero: <input type="number" name="equipo_id" 
+        Nº Equipo: <input type="number" name="equipo_id" 
         max="20" min="0" value="<?php echo $objetoCorredor->getEquipo_id();?>" required="required"/></br>
         <input type="submit" name="btn_modificar" value="Modificar">
     </form>

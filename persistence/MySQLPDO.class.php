@@ -103,7 +103,7 @@ class MySQLPDO {
 
     //MODIFICAR CORREDOR
     public static function modificarCorredor($objetoCorredor){
-        $sql = "UPDATE corredor SET NOMBRE_C = ?, APELLIDO = ?, CONTRASENA = ?, HUELLA = ?, EQUIPO_ID = WHERE ID_C = ?";
+        $sql = "UPDATE corredor SET NOMBRE_C = ?, APELLIDO = ?, CONTRASENA = ?, HUELLA = ?, EQUIPO_ID = ? WHERE ID_C = ?";
         $params = array(
             $objetoCorredor->getNombre(),
             $objetoCorredor->getApellido(),
@@ -112,6 +112,14 @@ class MySQLPDO {
             $objetoCorredor->getEquipo_id(),
             $objetoCorredor->getId()
         );
+        $result = MySQLPDO::select($sql, $params);
+        return $result;
+    }
+
+    //BORRAR CORREDOR
+    public static function borrarCorredor($id){
+        $sql = "DELETE FROM corredor WHERE ID_C = ?";
+        $params = array($id);
         $resultado = MySQLPDO::select($sql, $params);
         return $resultado;
     }
