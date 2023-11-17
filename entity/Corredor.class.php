@@ -3,6 +3,7 @@
         private $id;
         private $nombre;
         private $apellido;
+        private $usuario;
         private $contrasena;
         private $huella;
         private $equipo_id;
@@ -64,6 +65,26 @@
         public function setApellido($apellido)
         {
                 $this->apellido = $apellido;
+
+                return $this;
+        }
+        
+        /**
+         * Get the value of usuario
+         */ 
+        public function getUsuario()
+        {
+                return $this->usuario;
+        }
+
+        /**
+         * Set the value of usuario
+         *
+         * @return  self
+         */ 
+        public function setUsuario($usuario)
+        {
+                $this->usuario = $usuario;
 
                 return $this;
         }

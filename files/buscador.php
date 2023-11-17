@@ -25,6 +25,7 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Usuario</th>
             <th>Huella</th>
             <th>Equipo</th>
         </tr>
@@ -37,6 +38,7 @@
             <td><a href="modificar_corredor.php?id=<?php echo $ID_C; ?>"><?php echo $ID_C; ?></a></td>
             <td><?php echo $NOMBRE_C; ?></td>
             <td><?php echo $APELLIDO; ?></td>
+            <td><?php echo $USUARIO_C; ?></td>
             <td><?php echo $HUELLA; ?></td>
             <td><?php echo $EQUIPO_ID; ?></td>
             <td>

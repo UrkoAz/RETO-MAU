@@ -37,10 +37,11 @@ class MySQLPDO {
     }
     //INSERTAR UN CORREDOR
     public static function insertCorredor($objetoCorredor){
-        $sql = "INSERT INTO corredor (NOMBRE_C, APELLIDO, CONTRASENA, HUELLA, EQUIPO_ID) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO corredor (NOMBRE_C, APELLIDO, USUARIO_C, CONTRASENA, HUELLA, EQUIPO_ID) VALUES (?, ?, ?, ?, ?, ?)";
         $params = array(
             $objetoCorredor->getNombre(),
             $objetoCorredor->getApellido(),
+            $objetoCorredor->getUsuario(),
             $objetoCorredor->getContrasena(),
             $objetoCorredor->getHuella(),
             $objetoCorredor->getEquipo_id()
@@ -67,8 +68,8 @@ class MySQLPDO {
     }
     //BUSCAR CORREDOR
     public static function buscarCorredor($buscar){
-        $sql = "SELECT * FROM corredor WHERE NOMBRE_C LIKE ? OR APELLIDO LIKE ?";
-        $params = array("%" . $buscar, $buscar . "%");
+        $sql = "SELECT * FROM corredor WHERE NOMBRE_C LIKE ? OR APELLIDO LIKE ? OR USUARIO_C LIKE ?";
+        $params = array("%" . $buscar, $buscar, $buscar . "%");
         $result = MySQLPDO::select($sql, $params);
         return $result;
     }
@@ -89,6 +90,7 @@ class MySQLPDO {
             $objetoCorredor->setId($ID_C);
             $objetoCorredor->setNombre($NOMBRE_C);
             $objetoCorredor->setApellido($APELLIDO);
+            $objetoCorredor->getUsuario($USUARIO_C);
             $objetoCorredor->setContrasena($CONTRASENA);
             $objetoCorredor->setHuella($HUELLA);
             $objetoCorredor->setEquipo_id($EQUIPO_ID);
@@ -103,10 +105,11 @@ class MySQLPDO {
 
     //MODIFICAR CORREDOR
     public static function modificarCorredor($objetoCorredor){
-        $sql = "UPDATE corredor SET NOMBRE_C = ?, APELLIDO = ?, CONTRASENA = ?, HUELLA = ?, EQUIPO_ID = ? WHERE ID_C = ?";
+        $sql = "UPDATE corredor SET NOMBRE_C = ?, APELLIDO = ?, USUARIO_C = ?, CONTRASENA = ?, HUELLA = ?, EQUIPO_ID = ? WHERE ID_C = ?";
         $params = array(
             $objetoCorredor->getNombre(),
             $objetoCorredor->getApellido(),
+            $objetoCorredor->getUsuario(),
             $objetoCorredor->getContrasena(),
             $objetoCorredor->getHuella(),
             $objetoCorredor->getEquipo_id(),
@@ -122,6 +125,18 @@ class MySQLPDO {
         $params = array($id);
         $resultado = MySQLPDO::select($sql, $params);
         return $resultado;
+    }
+
+    //LOGIN
+    public static function login($user, $contra){
+        $sql = "SELECT * FROM corredor WHERE USUARIO_C = ? AND CONTRASENA = ?";
+        $params = array($user, $contra);
+        $result = MySQLPDO::select($sql, $params);
+        if (sizeof($result) != 0) {
+            return self::generarCorredor($result[0]); 
+        } else {
+            return null;
+        }
     }
 }
 ?>
