@@ -20,7 +20,7 @@
         
             if (sizeof($corredoresDevueltos) !=0 ) {
     ?>
-    <table border="1px">
+    <table class= "tablaCorredor" border="1px">
         <tr>
             <th>Id</th>
             <th>Nombre</th>

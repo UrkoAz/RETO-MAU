@@ -3,7 +3,7 @@
 <title>Alta de corredor</title>
 <head>
     <link rel="icon" href="../img/maulogo.jpg" type="image/icon type">
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
 </head>
 <body>
     <?php
@@ -13,7 +13,7 @@
         $result = MySQLPDO::buscarEquipos();
         
     ?>
-    <form method="post" action="alta_corredor.php">
+    <form method="post" action="alta_corredor.php" id="altaCorredorForm" >
         Nombre: <input type="text" name="nombre" maxlength="255" required="required"></br>
         Apellido: <input type="text" name="apellido" maxlength="255" required="required"></br>
         Usuario: <input type="text" name="usuario" maxlength="255" required="required"></br>

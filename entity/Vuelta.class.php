@@ -1,24 +1,25 @@
 <?php
     class Vuelta{
-        private $id;
+        private $id_v;
         private $tiempo;
+        private $id_corredor;
 
         /**
          * Get the value of id
          */ 
-        public function getId()
+        public function getid_v()
         {
-                return $this->id;
+                return $this->id_v;
         }
 
         /**
-         * Set the value of id
+         * Set the value of id_v
          *
          * @return  self
          */ 
-        public function setId($id)
+        public function setid_v($id_v)
         {
-                $this->id = $id;
+                $this->id_v = $id_v;
 
                 return $this;
         }
@@ -39,6 +40,26 @@
         public function setTiempo($tiempo)
         {
                 $this->tiempo = $tiempo;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of id_corredor
+         */ 
+        public function getId_corredor()
+        {
+                return $this->id_corredor;
+        }
+
+        /**
+         * Set the value of id_corredor
+         *
+         * @return  self
+         */ 
+        public function setId_corredor($id_corredor)
+        {
+                $this->id_corredor = $id_corredor;
 
                 return $this;
         }

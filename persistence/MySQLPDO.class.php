@@ -59,6 +59,19 @@ class MySQLPDO {
         $result = MySQLPDO::exec($sql, $params);
         return $result;
     }
+
+    /*//INSERTAR UN TIEMPO
+    public static function insertVuelta($objetoVuelta){
+        $sql = "INSERT INTO equipo (ID_V, TIEMPO, CORREDOR_ID) VALUES (?, ?, ?)";
+        $params = array(
+            $objetoVuelta->getid_v(),
+            $objetoVuelta->getTiempo(),
+            $objetoVuelta->getId_corredor()
+        );
+        $result = MySQLPDO::exec($sql, $params);
+        return $result;
+    }*/
+
     //BUSCAR UN EQUIPO CONECTADO CON EL FORMULARIO DE CORREDOR PARA QUE SALGAN LOS EQUIPOS EN EL DESPLEGABLE.
     public static function buscarEquipos(){
         $sql = "SELECT * FROM equipo";
@@ -127,7 +140,7 @@ class MySQLPDO {
         return $resultado;
     }
 
-    //LOGIN
+    /*//LOGIN
     public static function login($user, $contra){
         $sql = "SELECT * FROM corredor WHERE USUARIO_C = ? AND CONTRASENA = ?";
         $params = array($user, $contra);
@@ -137,6 +150,6 @@ class MySQLPDO {
         } else {
             return null;
         }
-    }
+    }*/
 }
 ?>
