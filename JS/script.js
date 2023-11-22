@@ -44,8 +44,9 @@ let cronometroActivo = false;
         }
     }
 
-    function enviarCronometro(){
-        var valorCronometro = document.getElementById("cronometro").value;
+    function enviarCronometro() {
+        var valorCronometro = document.getElementById("cronometro").innerHTML;
+        document.getElementById("valorCronometro").value = valorCronometro;
     }
 
 document.getElementById("Btn_Iniciar").addEventListener("click", iniciarCronometro);

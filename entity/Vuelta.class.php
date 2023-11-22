@@ -2,6 +2,7 @@
     class Vuelta{
         private $id_v;
         private $tiempo;
+        private $n_vuelta;
         private $id_corredor;
 
         /**
@@ -60,6 +61,26 @@
         public function setId_corredor($id_corredor)
         {
                 $this->id_corredor = $id_corredor;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of n_vuelta
+         */ 
+        public function getN_vuelta()
+        {
+                return $this->n_vuelta;
+        }
+
+        /**
+         * Set the value of n_vuelta
+         *
+         * @return  self
+         */ 
+        public function setN_vuelta($n_vuelta)
+        {
+                $this->n_vuelta = $n_vuelta;
 
                 return $this;
         }

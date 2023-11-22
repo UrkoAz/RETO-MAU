@@ -2,20 +2,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <title>Cronómetro</title>
 </head>
 <body>
-    <h2>Cronómetro</h2>
+<img src="../img/maulogo.jpg" alt="logo" width="100" height="100">
     <input type="hidden" name="valorCronometro" value=""/>
     <div id="cronometro">00:00:00</div>
+    <div class="textoVuelta">Nº de Vuelta: </div>
+    <div class="inputVuelta"><input class="cajonVuelta" type="number" name="n_vuelta" maxlength="20" minlength="1" required="required"></div>
     <table class="tablaCrono">
         <tr>
             <td><button id="Btn_Iniciar">Iniciar</button></td>
             <td><button id="Btn_Detener">Detener</button></td>
             <td><button id="Btn_Reiniciar">Reiniciar</button></td>
-            <td><button id="Btn_Enviar">Enviar</button></td>
-            <td><button id="Btn_Vueltas">Nueva Vuelta</button></td>
+            <td><button type="submit" id="Btn_Enviar">Enviar</button></td>
         </tr>
     </table>
 
