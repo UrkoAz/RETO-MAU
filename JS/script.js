@@ -46,6 +46,7 @@ let cronometroActivo = false;
 
     function enviarCronometro() {
         var valorCronometro = document.getElementById("cronometro").innerHTML;
+        /*alert(valorCronometro);*/
         document.getElementById("valorCronometro").value = valorCronometro;
     }
 

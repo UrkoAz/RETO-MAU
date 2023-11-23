@@ -11,11 +11,13 @@
         <tr>
             <th>ID de vuelta</th>
             <th>Tiempo</th>
+            <th>Vuelta nº</th>
             <th>Id del corredor</th>
         </tr>
         <tr>
             <td><?php echo $ID_V; ?></td>
             <td><?php echo $TIEMPO; ?></td>
+            <td><?php echo $N_VUELTAS; ?></td>
             <td><?php echo $CORREDOR_ID; ?></td>
             <td>
                 <form method="POST" action="vuelta_borrada.php">

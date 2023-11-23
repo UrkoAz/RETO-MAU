@@ -1,16 +1,20 @@
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 /* Estilo para los formularios */
 form {
     max-width: 400px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 40px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -21,7 +25,7 @@ form input[type="text"],
 form input[type="password"],
 form select,
 form input[type="number"] {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
@@ -29,7 +33,7 @@ form input[type="number"] {
 
 /* Estilo para los botones de los formularios */
 form input[type="submit"] {
-    background-color: #4caf50;
+    background-color: #4c90af;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -38,7 +42,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: rgb(120, 194, 255);
 }
 
 /* Estilos específicos para la página de búsqueda de corredores */
@@ -76,6 +80,113 @@ a:hover {
     font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.inputVuelta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4c82af;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #456fa0;
+}
+
+/* Añade este estilo para centrar la tabla */
+.tablaCrono {
+    display: flex;
+    justify-content: center;
+}
+/* Estilos generales
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+Estilo para los formularios
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+Estilo para los elementos de los formularios
+form input[type="text"],
+form input[type="password"],
+form select,
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+Estilo para los botones de los formularios
+form input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+Estilos específicos para la página de búsqueda de corredores
+.tablaCorredor {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tablaCorredor, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+CRONOMETRO
+#cronometro {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
     margin-top: 200px;
 }
 
@@ -96,7 +207,7 @@ a:hover {
     display: inline-block;
     align-items: center;
     margin-bottom: 10px;
-    margin-left: 860px;
+    margin-left: 750px;
 }
 
 button {
@@ -115,5 +226,5 @@ button:hover {
 }
 
 .tablaCrono {
-    margin-left: 740px;
-}
+    margin-left: 650px;
+}*/

@@ -62,12 +62,10 @@ class MySQLPDO {
 
     //INSERTAR UN TIEMPO
     public static function insertVuelta($objetoVuelta){
-        $sql = "INSERT INTO equipo (ID_V, TIEMPO, N_VUELTAS, CORREDOR_ID) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO vuelta (TIEMPO, N_VUELTAS) VALUES (?, ?)";
         $params = array(
-            $objetoVuelta->getid_v(),
             $objetoVuelta->getTiempo(),
-            $objetoVuelta->getN_vuelta(),
-            $objetoVuelta->getId_corredor()
+            $objetoVuelta->getN_vuelta()
         );
         $result = MySQLPDO::exec($sql, $params);
         return $result;
