@@ -50,6 +50,17 @@ let cronometroActivo = false;
         document.getElementById("valorCronometro").value = valorCronometro;
     }
 
+    //cookies
+    function alertCookies() {
+        var userResponse = confirm('Aceptas las cookies?');
+        
+            if (userResponse) {
+            alert('Has aceptado las cookies!');
+        } else {
+            window.history.back();
+        }
+    }
+
 document.getElementById("Btn_Iniciar").addEventListener("click", iniciarCronometro);
 document.getElementById("Btn_Detener").addEventListener("click", detenerCronometro);
 document.getElementById("Btn_Reiniciar").addEventListener("click", reiniciarCronometro);
