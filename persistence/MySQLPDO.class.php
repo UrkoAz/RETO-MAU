@@ -62,10 +62,11 @@ class MySQLPDO {
 
     //INSERTAR UN TIEMPO
     public static function insertVuelta($objetoVuelta){
-        $sql = "INSERT INTO vuelta (TIEMPO, N_VUELTAS) VALUES (?, ?)";
+        $sql = "INSERT INTO vuelta (TIEMPO, N_VUELTA/*, ID_CORREDOR*/) VALUES (?, ?, ?)";
         $params = array(
             $objetoVuelta->getTiempo(),
             $objetoVuelta->getN_vuelta()
+            //$objetoVuelta->getId_corredor()
         );
         $result = MySQLPDO::exec($sql, $params);
         return $result;
@@ -110,7 +111,7 @@ class MySQLPDO {
 
             $objetoCorredor->setId($ID_C);
             $objetoCorredor->setNombre($NOMBRE_C);
-            $objetoCorredor->getUsuario($USUARIO_C);
+            $objetoCorredor->setUsuario($USUARIO_C);
             $objetoCorredor->setApellido($APELLIDO);
             $objetoCorredor->setContrasena($CONTRASENA);
             $objetoCorredor->setHuella($HUELLA);
@@ -148,16 +149,23 @@ class MySQLPDO {
         return $resultado;
     }
 
-    /*//LOGIN
-    public static function login($user, $contra){
+    //VALIDAR USUARIO
+    public static function validarUsuario($objetoUsuario){
         $sql = "SELECT * FROM corredor WHERE USUARIO_C = ? AND CONTRASENA = ?";
-        $params = array($user, $contra);
+        $params = array(
+            $objetoUsuario->getUsuario(),
+            $objetoUsuario->getContrasena()
+    );
         $result = MySQLPDO::select($sql, $params);
-        if (sizeof($result) != 0) {
-            return self::generarCorredor($result[0]); 
-        } else {
-            return null;
-        }
-    }*/
+        return $result;
+    }
+
+    //CLASIFICACION
+    public static function mostrarClasificacion(){
+        $sql = "SELECT V.N_VUELTA, C.USUARIO_C, V.TIEMPO FROM VUELTA V INNER JOIN CORREDOR C ON V.CORREDOR_ID = C.ID_C GROUP BY V.TIEMPO";
+        $params = array();
+        $result = MySQLPDO::select($sql, $params);
+        return $result;
+    }
 }
 ?>

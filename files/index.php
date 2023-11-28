@@ -5,10 +5,12 @@
 </head>
 <body onload="alertCookies()">
     <table border="1px">
+        <form method="POST" action="validarUsuario.php" onsubmit="return validarUsuario()" >
         Usuario: <input type="text" name="usuariologin" placeholder="Introduzca su usuario" required="required"/></br>  
         Contrase&ntilde;a: <input type="password" name="contralogin" required="required"/></br>
-        <input type="submit" onclick="login()" name="btn_inises" value="Iniciar Sesión"></br>
-        <input type="submit" name="btn_registro" value="Registrarse">
+        <input type="submit" name="btn_inises" value="Iniciar Sesión"></br>
+        </form>
+        <a href="formulario_corredor.php">¡Reg&iacute;strate si no tienes cuenta!</a><br>
         <tr>
                 <td><a href="buscador.php" target="_self"><button>BUSCAR</button></a></td>
                 <td><a href="formulario_equipo.php" target="_self"><button>ALTA EQUIPO</button></a></td>

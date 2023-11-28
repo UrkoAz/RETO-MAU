@@ -8,7 +8,15 @@
 <body>
 <img src="../img/maulogo.png" alt="logo" width="150" height="150">
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+        <!--<input type="hidden" id="corredor_id" value="<?php echo $ID_C ?>">-->
         <input type="hidden" id="valorCronometro" name="valorCronometro"/>
+        <div id="usuarioDiv">
+        <?php
+        if (isset($_SESSION["usuariologin"])) {
+            echo '¡Hola, ' . $_SESSION["usuariologin"] . '!';
+        }
+        ?>
+        </div>
         <div id="cronometro">00:00:00</div>
         <div class="textoVuelta">Nº de Vuelta: </div>
         <div class="inputVuelta"><input class="cajonVuelta" type="number" name="n_vuelta" maxlength="20" minlength="1" required="required"></div>
@@ -30,10 +38,12 @@
         //incluimos 
         include_once '../persistence/MySQLPDO.class.php';
         include_once '../entity/Vuelta.class.php';
+        include_once '../entity/Corredor.class.php';
 
             //variables
             $varTiempo = $_POST['valorCronometro'];
             $varNVuelta = $_POST['n_vuelta'];
+            
 
 
         //nuevo objeto vuelta
@@ -46,7 +56,7 @@
         MySQLPDO::connect();
         $result = MySQLPDO::insertVuelta($objetoVuelta);
         }else{
-            echo '0 ASEGURAO';
+            echo 'ERROR';
         }
     ?>
 </body>
