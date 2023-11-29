@@ -19,15 +19,16 @@ if ($result!=null){
         extract ($filas);
     
         if ($varUsuarioVal == $USUARIO_C && $varContrasenaVal == $CONTRASENA) {
+            $_SESSION['id'] = $ID_C;
             $_SESSION["loggedin"] = true;
-            $_SESSION["usuariologin"] = $result['USUARIO_C'];
+            $_SESSION["usuariologin"] = $varUsuarioVal;
             header("location: cronometro.php");
             exit();
         
         } 
     }
 } else {
-    echo 'No tienes cuenta, hazte una si quieres';
+    echo 'No tienes cuenta, hazte una si quieres <a href="formulario_corredor.php">Entra aqui</a>';
 
 }
 if ($varUsuarioVal === 'admin' && $varContrasenaVal === 'passmau'){

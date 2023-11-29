@@ -62,11 +62,11 @@ class MySQLPDO {
 
     //INSERTAR UN TIEMPO
     public static function insertVuelta($objetoVuelta){
-        $sql = "INSERT INTO vuelta (TIEMPO, N_VUELTA/*, ID_CORREDOR*/) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO vuelta (TIEMPO, N_VUELTAS, CORREDOR_ID) VALUES (?, ?, ?)";
         $params = array(
             $objetoVuelta->getTiempo(),
-            $objetoVuelta->getN_vuelta()
-            //$objetoVuelta->getId_corredor()
+            $objetoVuelta->getN_vuelta(),
+            $objetoVuelta->getId_corredor()
         );
         $result = MySQLPDO::exec($sql, $params);
         return $result;
@@ -162,7 +162,7 @@ class MySQLPDO {
 
     //CLASIFICACION
     public static function mostrarClasificacion(){
-        $sql = "SELECT V.N_VUELTA, C.USUARIO_C, V.TIEMPO FROM VUELTA V INNER JOIN CORREDOR C ON V.CORREDOR_ID = C.ID_C GROUP BY V.TIEMPO";
+        $sql = "SELECT V.N_VUELTAS, C.USUARIO_C, V.TIEMPO FROM VUELTA V INNER JOIN CORREDOR C ON V.CORREDOR_ID = C.ID_C GROUP BY V.ID_V ORDER BY V.TIEMPO asc";
         $params = array();
         $result = MySQLPDO::select($sql, $params);
         return $result;

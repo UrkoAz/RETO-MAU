@@ -11,12 +11,6 @@
         <input type="submit" name="btn_inises" value="Iniciar Sesión"></br>
         </form>
         <a href="formulario_corredor.php">¡Reg&iacute;strate si no tienes cuenta!</a><br>
-        <tr>
-                <td><a href="buscador.php" target="_self"><button>BUSCAR</button></a></td>
-                <td><a href="formulario_equipo.php" target="_self"><button>ALTA EQUIPO</button></a></td>
-                <td><a href="formulario_corredor.php" target="_self"><button>ALTA CORREDOR</button></a></td>
-                <td><a href="cronometro.php" target="_self"><button>CRONOMETRO</button></a></td>
-        </tr>
     </table>
 </body>
 </html>

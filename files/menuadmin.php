@@ -12,6 +12,7 @@
                 <td><a href="formulario_equipo.php" target="_self"><button>ALTA EQUIPO</button></a></td>
                 <td><a href="formulario_corredor.php" target="_self"><button>ALTA CORREDOR</button></a></td>
                 <td><a href="cronometro.php" target="_self"><button>CRONOMETRO</button></a></td>
+                <td><a href="clasificacion.php" target="_self"><button>CLASIFICACI&Oacute;N</button></a></td>
         </tr>
     </table>
     </body>
