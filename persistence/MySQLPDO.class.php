@@ -37,13 +37,12 @@ class MySQLPDO {
     }
     //INSERTAR UN CORREDOR
     public static function insertCorredor($objetoCorredor){
-        $sql = "INSERT INTO corredor (NOMBRE_C, APELLIDO, USUARIO_C, CONTRASENA, HUELLA, EQUIPO_ID) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO corredor (NOMBRE_C, APELLIDO, USUARIO_C, CONTRASENA, EQUIPO_ID) VALUES (?, ?, ?, ?, ?)";
         $params = array(
             $objetoCorredor->getNombre(),
             $objetoCorredor->getApellido(),
             $objetoCorredor->getUsuario(),
             $objetoCorredor->getContrasena(),
-            $objetoCorredor->getHuella(),
             $objetoCorredor->getEquipo_id()
         );
         $result = MySQLPDO::exec($sql, $params);

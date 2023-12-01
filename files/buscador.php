@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
     <form method="POST" action="<?php echo $_SERVER ['PHP_SELF']; ?>">
@@ -26,7 +26,6 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Usuario</th>
-            <th>Huella</th>
             <th>Equipo</th>
         </tr>
         <?php
@@ -39,7 +38,6 @@
             <td><?php echo $NOMBRE_C; ?></td>
             <td><?php echo $APELLIDO; ?></td>
             <td><?php echo $USUARIO_C; ?></td>
-            <td><?php echo $HUELLA; ?></td>
             <td><?php echo $EQUIPO_ID; ?></td>
             <td>
                 <form method="POST" action="corredor_borrado.php">

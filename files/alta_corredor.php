@@ -11,7 +11,6 @@
             $varApellido = $_POST['apellido'];
             $varUsuario = $_POST['usuario'];
             $varContrasena = $_POST['contrasena'];
-            $varHuella = $_POST['huella'];
             $varEquipoId = $_POST['fk_equipo_id'];
 
         //nuevo objeto corredor
@@ -20,7 +19,6 @@
         $objetoCorredor->setNombre($varNombre);
         $objetoCorredor->setApellido($varApellido);
         $objetoCorredor->setUsuario($varUsuario);
-        $objetoCorredor->setHuella($varHuella);
         $objetoCorredor->setContrasena($varContrasena);
         $objetoCorredor->setEquipo_id($varEquipoId);
 

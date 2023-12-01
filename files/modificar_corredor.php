@@ -23,8 +23,6 @@ include_once '../entity/Corredor.class.php';
         maxlength="255" value="<?php echo $objetoCorredor->getApellido();?>" required="required"/></br>
         Contrase&ntilde;a: <input type="text"name="contrasena" 
         maxlength="255" value="<?php echo $objetoCorredor->getContrasena();?>" required="required"/></br>
-        Huella: <input type="text" name="huella" 
-        maxlength="255" value="<?php echo $objetoCorredor->getHuella();?>" required="required"/></br>
         Nº Equipo: <input type="number" name="equipo_id" 
         max="20" min="0" value="<?php echo $objetoCorredor->getEquipo_id();?>" required="required"/></br>
         <input type="submit" name="btn_modificar" value="Modificar">
