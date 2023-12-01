@@ -1,7 +1,7 @@
 <?php
 class MySQLPDO {
     private static $host = "localhost"; //o la IP del servidor de BBBDD remoto
-    private static $database = "webreto";
+    private static $database = "WEBRETO";
     private static $username = "user_mau";
     private static $password = "pass_mau";
     private static $base;
@@ -37,7 +37,7 @@ class MySQLPDO {
     }
     //INSERTAR UN CORREDOR
     public static function insertCorredor($objetoCorredor){
-        $sql = "INSERT INTO corredor (NOMBRE_C, APELLIDO, USUARIO_C, CONTRASENA, EQUIPO_ID) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO CORREDOR (NOMBRE_C, APELLIDO, USUARIO_C, CONTRASENA, EQUIPO_ID) VALUES (?, ?, ?, ?, ?)";
         $params = array(
             $objetoCorredor->getNombre(),
             $objetoCorredor->getApellido(),
@@ -50,7 +50,7 @@ class MySQLPDO {
     }
     //INSERTAR UN EQUIPO
     public static function insertEquipo($objetoEquipo){
-        $sql = "INSERT INTO equipo (ID_E, NOMBRE_E) VALUES (?, ?)";
+        $sql = "INSERT INTO EQUIPO (ID_E, NOMBRE_E) VALUES (?, ?)";
         $params = array(
             $objetoEquipo->getId(),
             $objetoEquipo->getNombre()
@@ -61,7 +61,7 @@ class MySQLPDO {
 
     //INSERTAR UN TIEMPO
     public static function insertVuelta($objetoVuelta){
-        $sql = "INSERT INTO vuelta (TIEMPO, N_VUELTAS, CORREDOR_ID) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO VUELTA (TIEMPO, N_VUELTAS, CORREDOR_ID) VALUES (?, ?, ?)";
         $params = array(
             $objetoVuelta->getTiempo(),
             $objetoVuelta->getN_vuelta(),
@@ -73,7 +73,7 @@ class MySQLPDO {
 
     //BUSCAR UN TIEMPO
     public static function buscarVuelta(){
-        $sql = "SELECT * FROM vuelta";
+        $sql = "SELECT * FROM VUELTA";
         $params = array();
         $result = MySQLPDO::select($sql, $params);
         return $result;
@@ -82,14 +82,14 @@ class MySQLPDO {
 
     //BUSCAR UN EQUIPO CONECTADO CON EL FORMULARIO DE CORREDOR PARA QUE SALGAN LOS EQUIPOS EN EL DESPLEGABLE.
     public static function buscarEquipos(){
-        $sql = "SELECT * FROM equipo";
+        $sql = "SELECT * FROM EQUIPO";
         $params = array();
         $result = MySQLPDO::select($sql, $params);
         return $result;
     }
     //BUSCAR CORREDOR
     public static function buscarCorredor($buscar){
-        $sql = "SELECT * FROM corredor WHERE NOMBRE_C LIKE ? OR APELLIDO LIKE ? OR USUARIO_C LIKE ?";
+        $sql = "SELECT * FROM CORREDOR WHERE NOMBRE_C LIKE ? OR APELLIDO LIKE ? OR USUARIO_C LIKE ?";
         $params = array("%" . $buscar, $buscar, $buscar . "%");
         $result = MySQLPDO::select($sql, $params);
         return $result;
@@ -97,7 +97,7 @@ class MySQLPDO {
 
     //OBTENER CORREDOR PARA MODIFICARLO DESPUÉS
     public static function obtenerCorredor($id){
-        $sql = "SELECT * FROM corredor WHERE ID_C = ?";
+        $sql = "SELECT * FROM CORREDOR WHERE ID_C = ?";
         $params = array($id);
         $result = MySQLPDO::select($sql, $params);
         if(sizeof($result) != 0){
@@ -126,7 +126,7 @@ class MySQLPDO {
 
     //MODIFICAR CORREDOR
     public static function modificarCorredor($objetoCorredor){
-        $sql = "UPDATE corredor SET NOMBRE_C = ?, APELLIDO = ?, USUARIO_C = ?, CONTRASENA = ?, HUELLA = ?, EQUIPO_ID = ? WHERE ID_C = ?";
+        $sql = "UPDATE CORREDOR SET NOMBRE_C = ?, APELLIDO = ?, USUARIO_C = ?, CONTRASENA = ?, HUELLA = ?, EQUIPO_ID = ? WHERE ID_C = ?";
         $params = array(
             $objetoCorredor->getNombre(),
             $objetoCorredor->getApellido(),
@@ -142,7 +142,7 @@ class MySQLPDO {
 
     //BORRAR CORREDOR
     public static function borrarCorredor($id){
-        $sql = "DELETE FROM corredor WHERE ID_C = ?";
+        $sql = "DELETE FROM CORREDOR WHERE ID_C = ?";
         $params = array($id);
         $resultado = MySQLPDO::select($sql, $params);
         return $resultado;
@@ -150,7 +150,7 @@ class MySQLPDO {
 
     //VALIDAR USUARIO
     public static function validarUsuario($objetoUsuario){
-        $sql = "SELECT * FROM corredor WHERE USUARIO_C = ? AND CONTRASENA = ?";
+        $sql = "SELECT * FROM CORREDOR WHERE USUARIO_C = ? AND CONTRASENA = ?";
         $params = array(
             $objetoUsuario->getUsuario(),
             $objetoUsuario->getContrasena()
