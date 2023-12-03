@@ -161,7 +161,11 @@ class MySQLPDO {
 
     //CLASIFICACION
     public static function mostrarClasificacion(){
-        $sql = "SELECT V.N_VUELTAS, C.USUARIO_C, V.TIEMPO FROM VUELTA V INNER JOIN CORREDOR C ON V.CORREDOR_ID = C.ID_C GROUP BY V.ID_V ORDER BY V.TIEMPO asc";
+        $sql = "SELECT C.USUARIO_C, SUM(TIME_TO_SEC(V.TIEMPO)) AS 'TIEMPO_TOTAL', E.NOMBRE_E FROM VUELTA V 
+        INNER JOIN CORREDOR C ON V.CORREDOR_ID = C.ID_C 
+        INNER JOIN EQUIPO E ON E.ID_E = C.EQUIPO_ID
+        GROUP BY C.USUARIO_C 
+        ORDER BY V.TIEMPO asc";
         $params = array();
         $result = MySQLPDO::select($sql, $params);
         return $result;

@@ -2,6 +2,8 @@
 <head>
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/script.js"></script>
+    <link rel="icon" href="img/maulogo.jpg" type="image/icon type">
+    <title>Inicio de Sesi&oacute;n</title>
 </head>
 <body onload="alertCookies()">
 <img src="img/maulogo.png" alt="logo" width="150" height="150">

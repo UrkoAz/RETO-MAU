@@ -14,7 +14,7 @@ let cronometroActivo = false; //dice si el cronómetro está activo o no.
                 cronometroActivo = true; //Activa el cronómetro.
                 actualizarCronometro(); //llama a la función "actualizarCronometro()"".
         }
-        } catch (error){
+        } catch (error){ //control de errores.
             console.log(error.message);
         }
     }
@@ -65,7 +65,6 @@ let cronometroActivo = false; //dice si el cronómetro está activo o no.
     function enviarCronometro() {
         try {
         var valorCronometro = document.getElementById("cronometro").innerHTML; //Coge el valor del div con id "cronometro" de "cronometro.php".
-        /*alert(valorCronometro);*/
         document.getElementById("valorCronometro").value = valorCronometro; //Asigna ese valor a "valorCronometro".
         
         } catch (error){

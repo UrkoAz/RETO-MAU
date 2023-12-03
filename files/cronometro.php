@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/estilos.css">
-    <script src="../js/script.js"></script>
+    <link rel="icon" href="../img/maulogo.jpg" type="image/icon type">
     <title>Cronómetro</title>
 </head>
 <body>

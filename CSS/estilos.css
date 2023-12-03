@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-image: url(../img/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 0;
     display: flex;
@@ -8,6 +10,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    font-size: x-large;
 }
 
 /* Estilo para los formularios */
@@ -132,6 +135,27 @@ button:hover {
     font-size: large;
 }
 
+.btn_crono{
+    float: left;
+    float: top;
+}
+
+.btn_atras{
+    float: left;
+    float: top;
+}
+
 .btn_inicioses:hover{
     background-color: rgb(155, 94, 184);
+}
+
+.tiempostotales{
+    text-decoration: solid;
+    font-size: x-large;
+    font-style: initial;
+    font-weight: bolder;
+    color: rgb(144, 76, 175);
+    border: 10px;
+    border-color: black;
+    text-shadow: 1px 1px 5px rgb(160, 160, 160);
 }
