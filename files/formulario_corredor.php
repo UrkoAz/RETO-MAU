@@ -4,8 +4,10 @@
 <head>
     <link rel="icon" href="../img/maulogo.jpg" type="image/icon type">
     <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+    <script src="../js/script.js"></script>
 </head>
 <body>
+<img src="../img/maulogo.png" alt="logo" width="200" height="200">
     <?php
         include_once '../persistence/MySQLPDO.class.php';
         include_once '../entity/Equipo.class.php';
@@ -32,5 +34,6 @@
         <tr>
         <input type="submit" name="btn_alta" value="Alta">
     </form>
+        <button id="Btn_Atras">Volver atr&aacute;s</button>
 </body>
 </html>

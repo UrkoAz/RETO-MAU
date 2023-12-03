@@ -33,16 +33,17 @@ form input[type="number"] {
 
 /* Estilo para los botones de los formularios */
 form input[type="submit"] {
-    background-color: #4c90af;
-    color: #fff;
+    background-color: rgb(144, 76, 175);
+    color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: medium;
 }
 
 form input[type="submit"]:hover {
-    background-color: rgb(120, 194, 255);
+    background-color: rgb(155, 94, 184);
 }
 
 /* Estilos específicos para la página de búsqueda de corredores */
@@ -62,7 +63,7 @@ th, td {
 }
 
 th {
-    background-color: #4caf50;
+    background-color: rgb(144, 76, 175);
     color: #fff;
 }
 
@@ -90,18 +91,17 @@ a:hover {
 }
 
 button {
-    padding: 10px;
-    margin: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4c82af;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+    background-color: rgb(144, 76, 175);
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: medium;
 }
 
 button:hover {
-    background-color: #456fa0;
+    background-color: rgb(155, 94, 184);
 }
 
 /* Añade este estilo para centrar la tabla */
@@ -115,7 +115,6 @@ button:hover {
 }
 
 .inicioses{
-    width: 100%;
     padding: 10px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -124,11 +123,15 @@ button:hover {
 }
 
 .btn_inicioses{
-        background-color: rgb(119, 76, 175);
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        width: 100%;
+    background-color: rgb(144, 76, 175);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: large;
+}
+
+.btn_inicioses:hover{
+    background-color: rgb(155, 94, 184);
 }

@@ -31,6 +31,7 @@
         $num_clasificacion = $num_clasificacion + 1;    
         }
         ?>
-    </table>
+    </table><br>
+    <div> <a href="cronometro.php" target="_self"><button>CRON&Oacute;METRO</button></a></div>
 </body>
 </html>

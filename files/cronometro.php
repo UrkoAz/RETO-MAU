@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/script.js"></script>
     <title>Cronómetro</title>
 </head>
 <body>
@@ -31,6 +32,7 @@
             <td><button id="Btn_Iniciar">Iniciar</button></td>
             <td><button id="Btn_Detener">Detener</button></td>
             <td><button id="Btn_Reiniciar">Reiniciar</button></td>
+            <td><button id="Btn_Atras">Volver atr&aacute;s</button></td>
     </table>
     <script src="../js/script.js">
     </script>
