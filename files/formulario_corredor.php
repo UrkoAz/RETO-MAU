@@ -15,6 +15,7 @@
         $result = MySQLPDO::buscarEquipos();
         
     ?>
+    <a href="../index.php" target="_self"><button>Inicio de sesi&oacute;n</button></a>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="altaCorredorForm" >
         Nombre: <input type="text" name="nombre" maxlength="255" required="required"></br>
         Apellido: <input type="text" name="apellido" maxlength="255" required="required"></br>
@@ -60,12 +61,12 @@
                 $result = MySQLPDO::insertCorredor($objetoCorredor);
 
                 if ($result != 0) {
-                    echo 'Corredor introducido correctamente';
+                    echo '<p>Corredor introducido correctamente</p><br>';
                 } else {
                     echo 'ERROR: No se ha podido introducir el corredor';
                 }}
             ?>
     </form>
-        <button id="Btn_Atras" onclick="volverAtras()">Volver atr&aacute;s</button>
+        <button id="Btn_Atras" onclick="volverAtras()">Volver atr&aacute;s</button><br>
 </body>
 </html>

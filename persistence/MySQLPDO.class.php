@@ -159,16 +159,31 @@ class MySQLPDO {
         return $result;
     }
 
-    //CLASIFICACION
+    //CLASIFICACION POR CORREDOR
     public static function mostrarClasificacion(){
-        $sql = "SELECT C.USUARIO_C, SUM(TIME_TO_SEC(V.TIEMPO)) AS 'TIEMPO_TOTAL', E.NOMBRE_E FROM VUELTA V 
-        INNER JOIN CORREDOR C ON V.CORREDOR_ID = C.ID_C 
-        INNER JOIN EQUIPO E ON E.ID_E = C.EQUIPO_ID
-        GROUP BY C.USUARIO_C 
-        ORDER BY V.TIEMPO asc";
+        $sql = "SELECT C.USUARIO_C, SUM(TIME_TO_SEC(V.TIEMPO)) AS 'TIEMPO_TOTAL', E.NOMBRE_E 
+                FROM VUELTA V 
+                INNER JOIN CORREDOR C ON V.CORREDOR_ID = C.ID_C 
+                INNER JOIN EQUIPO E ON E.ID_E = C.EQUIPO_ID
+                GROUP BY C.USUARIO_C 
+                ORDER BY V.TIEMPO asc";
         $params = array();
         $result = MySQLPDO::select($sql, $params);
         return $result;
     }
+
+    //CLASIFICACION POR EQUIPOS
+    public static function mostrarClasificacionEquipo(){
+        $sql = "SELECT E.NOMBRE_E, C.USUARIO_C, SUM(TIME_TO_SEC(V.TIEMPO)) AS 'TIEMPO_TOTAL', COUNT(*) AS 'VUELTAS_TOTALES'
+                FROM CORREDOR C 
+                INNER JOIN EQUIPO E ON E.ID_E = C.EQUIPO_ID
+                INNER JOIN VUELTA V ON V.CORREDOR_ID = C.ID_C
+                GROUP BY C.EQUIPO_ID 
+                ORDER BY TIEMPO_TOTAL ASC, VUELTAS_TOTALES DESC";
+        $params = array();
+        $result = MySQLPDO::select($sql, $params);
+        return $result;
+    }
+
 }
 ?>

@@ -8,7 +8,8 @@
 </head>
 <body>
 <img src="../img/maulogo.png" alt="logo" width="150" height="150">
-<div> <a href="clasificacion.php" target="_self"><button>CLASIFICACI&Oacute;N</button></a></div>
+<a href="../index.php" target="_self"><button>Inicio de sesi&oacute;n</button></a>
+<div> <a href="clasificacion.php" target="_self"><button>CLASIFICACIONES</button></a></div>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
         <!--<input type="hidden" id="corredor_id" value="<?php //echo $ID_C ?>">-->
         <input type="hidden" id="valorCronometro" name="valorCronometro"/>

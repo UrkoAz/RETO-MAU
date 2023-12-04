@@ -85,7 +85,7 @@ let cronometroActivo = false; //dice si el cronómetro está activo o no.
     //cookies
     function alertCookies() {
         try{
-        var userResponse = confirm('Aceptas las cookies?'); //Muestra un cuadro de confirmación al usuario preguntando si acepta las cookies.
+        var userResponse = confirm('¿Aceptas las cookies?'); //Muestra un cuadro de confirmación al usuario preguntando si acepta las cookies.
         
             if (userResponse) {
             alert('Has aceptado las cookies!'); //Si el usuario acepta, sale por pantalla un mensaje.
