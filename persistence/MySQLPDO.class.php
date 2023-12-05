@@ -113,7 +113,6 @@ class MySQLPDO {
             $objetoCorredor->setUsuario($USUARIO_C);
             $objetoCorredor->setApellido($APELLIDO);
             $objetoCorredor->setContrasena($CONTRASENA);
-            $objetoCorredor->setHuella($HUELLA);
             $objetoCorredor->setEquipo_id($EQUIPO_ID);
 
             return $objetoCorredor;
@@ -126,13 +125,12 @@ class MySQLPDO {
 
     //MODIFICAR CORREDOR
     public static function modificarCorredor($objetoCorredor){
-        $sql = "UPDATE CORREDOR SET NOMBRE_C = ?, APELLIDO = ?, USUARIO_C = ?, CONTRASENA = ?, HUELLA = ?, EQUIPO_ID = ? WHERE ID_C = ?";
+        $sql = "UPDATE CORREDOR SET NOMBRE_C = ?, APELLIDO = ?, USUARIO_C = ?, CONTRASENA = ?, EQUIPO_ID = ? WHERE ID_C = ?";
         $params = array(
             $objetoCorredor->getNombre(),
             $objetoCorredor->getApellido(),
             $objetoCorredor->getUsuario(),
             $objetoCorredor->getContrasena(),
-            $objetoCorredor->getHuella(),
             $objetoCorredor->getEquipo_id(),
             $objetoCorredor->getId()
         );
